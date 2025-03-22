@@ -1,0 +1,64 @@
+{
+    "sqltools.connections": [
+        {
+            "pgOptions": {
+                "ssl": {
+                    "rejectUnauthorized": true
+                }
+            },
+            "previewLimit": 50,
+            "server": "dpg-cv5g5ql2ng1s739m9k70-a.oregon-postgres.render.com",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "database": "quotesdb_hl9c",
+            "username": "quotesdb_hl9c_user",
+            "name": "postgre online"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "PostgreSQL",
+            "database": "postgres",
+            "username": "postgres",
+            "password": "postgres"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "LocalPG",
+            "database": "quotesdb",
+            "username": "postgres",
+            "password": ""
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "PostgreSQL",
+            "database": "quotesdb",
+            "username": "postgres",
+            "password": "postgres"
+        },
+        {
+            "pgOptions": {
+                "ssl": {
+                    "rejectUnauthorized": true
+                }
+            },
+            "previewLimit": 50,
+            "server": "dpg-cv5g5ql2ng1s739m9k70-a.oregon-postgres.render.com",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "To Render",
+            "database": "quotesdb_hl9c",
+            "username": "quotesdb_hl9c_user",
+            "password": "ZKozTpvxpgYUzHiJJ2YArercflDlZSKG",
+            "connectionTimeout": 30
+        }
+    ]
+}
