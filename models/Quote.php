@@ -40,6 +40,12 @@ class Quote {
     // Create array for parameters
     $params = [];
 
+    if(!empty($this->id)) {
+        $query .= ' AND q.id = :id';
+        $params[':id'] = $this->id;  // Use id
+    }
+
+
     // Check for author_id
     if(!empty($this->author_id)) {
         $query .= ' AND q.author_id = :author_id';

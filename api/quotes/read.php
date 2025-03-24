@@ -13,6 +13,13 @@ $db = $database->connect();
 // Instantiate Quote Object
 $quote = new Quote($db);
 
+// Check for id
+if(isset($_GET['id'])) {
+    $quote->id = $_GET['id'];
+    $query .= ' AND q.id = :id';
+    $params[':id'] = $quote->id;
+}
+
 // Get author_id and/or category_id if provided
 $quote->author_id = isset($_GET['author_id']) ? $_GET['author_id'] : null;
 $quote->category_id = isset($_GET['category_id']) ? $_GET['category_id'] : null;
