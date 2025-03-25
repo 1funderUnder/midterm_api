@@ -30,7 +30,7 @@ if (empty($data->author)) {
 
         $new_author_id = $author->id;
 
-        echo json_encode(array('message' => 'created author', 'id' => $new_author_id, 'author' => $author->author));
+        echo json_encode(array('id' => $new_author_id, 'author' => $author->author));
     } else {
         echo json_encode(array('message' => 'Author Not Created'));
     }
