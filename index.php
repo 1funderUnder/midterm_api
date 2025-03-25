@@ -9,7 +9,16 @@ if ($method === 'OPTIONS') {
     header('Access-Control-Allow-Headers: Origin, Accept, Content-Type, X-Requested-With');
     exit();
 
-}  
+    
+
+    echo '<pre>';
+    print_r(getenv('SITE_URL'));
+    echo '<br>';
+    print_r($_SERVER);
+    echo '</pre>';
+    
+    phpinfo();   
+} 
 
     echo '<h1>Welcome to My Midterm Page for INF653</h1>';
     echo '<h2>By Laura Funderburk</h2>';
