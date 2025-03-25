@@ -2,4 +2,3 @@
 *.sql
 docker-compose.yml
 Dockerfile
-index.php
