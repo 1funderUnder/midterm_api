@@ -23,7 +23,7 @@ $num = $result->rowCount();
 if($num > 0) {
     // Category array
     $auth_arr = array();
-    $auth_arr['data'] = array();
+    //$auth_arr['data'] = array();
 
    while($row = $result->fetch(PDO::FETCH_ASSOC)) {
     extract($row);
@@ -33,8 +33,8 @@ if($num > 0) {
         'author' => $row['author']
     );
 
-    // Push to "data"
-    array_push($auth_arr['data'], $auth_item);
+    // Push to array
+    array_push($auth_arr, $auth_item);
    } 
 
    // Turn to JSON and output
