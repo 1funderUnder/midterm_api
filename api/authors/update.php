@@ -31,7 +31,7 @@ $author->author = $data->author;
 
 if($author->update()){
     echo json_encode(
-        array('message' => 'updated author', 'id' => $id, 'author' => $author)
+        array('message' => 'updated author', 'id' => $author->$id, 'author' => $author->author)
     );   
 } else {
     echo json_encode(
