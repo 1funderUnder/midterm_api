@@ -19,12 +19,20 @@ $db = $database->connect();
 // Instantiate the Author Object
 $author = new Author($db);
 
-// Get ID
-$id = isset($_GET['id']) ? $_GET['id'] : null;
+// Get data
+$data = json_decode(file_get_contents("php://input"));
+
+// Check for missing data
+if(empty($data->author)) {
+    echo json_encode(array('message' => 'Missing Required Parameters'));
+    exit();
+}
+
 
 // Handle files based on the request method
 switch ($method) {
     case 'GET':
+        $id = isset($_GET['id']) ? $_GET['id'] : null;
         if ($id) {
             // Include the file to get a single author
             include_once 'read_single.php';
@@ -35,10 +43,7 @@ switch ($method) {
         break;
 
     case 'POST':
-
-        // Debug
-        error_log("POST request detected");
-
+               
         // Include the file to create a new author
         include_once 'create.php';
         break;
