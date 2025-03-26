@@ -69,7 +69,7 @@ class Author {
 // Create Author
 public function create() {
     // Create query
-    $query = 'INSERT INTO ' . $this->table . ' (author) VALUES (:author)';
+    $query = 'INSERT INTO ' . $this->table . ' (author) VALUES (:author) RETURNING id';
 
     // Prepare Statement
     try {
@@ -85,19 +85,20 @@ public function create() {
          if ($stmt->execute()) {
 
             // Get the inserted ID
-            $this->id = $this->conn->lastInsertId();
-            return true;
+            $new_author_id = $stmt->fetch(PDO::FETCH_ASSOC)['id'];
+            echo json_encode(array('id' => $new_author_id, 'author' => $this->author));
         } else {
-            return false;
+            // If the query fails, return an error message
+            echo json_encode(array('message' => 'Author Not Created'));
         }
     } catch (PDOException $e) {
-
-        // Catch any errors during the execution
+        // Catch any errors during execution
         echo "Error: " . $e->getMessage();
         return false;
     }
-    }
+} 
 
+ 
 // Update Author
 public function update() {
     
@@ -158,6 +159,7 @@ public function update() {
         return false;
         }
     }
-
     }
+
+    
 
