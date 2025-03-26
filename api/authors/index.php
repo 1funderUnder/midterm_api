@@ -23,10 +23,10 @@ $author = new Author($db);
 $data = json_decode(file_get_contents("php://input"));
 
 // Check for missing data
-if(empty($data->author)) {
-    echo json_encode(array('message' => 'Missing Required Parameters'));
-    exit();
-}
+//if(empty($data->author)) {
+  //  echo json_encode(array('message' => 'Missing Required Parameters'));
+    //exit();
+//}
 
 
 // Handle files based on the request method
