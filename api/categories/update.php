@@ -1,6 +1,6 @@
 <?php
 // Headers
-header('Access-Control-Allow-Origin: *');
+/*header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 header('Access-Control-Allow-Methods: PUT');
 header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With');
@@ -10,7 +10,7 @@ include_once '../../models/Category.php';
 
 // Connect to Database
 $database = new Database();
-$db = $database->connect();
+$db = $database->connect();*/
 
 // Instantiate Category Object
 $category = new Category($db);
